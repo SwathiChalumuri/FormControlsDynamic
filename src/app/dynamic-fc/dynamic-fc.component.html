@@ -1,0 +1,29 @@
+<div fxLayout="column" fxLayoutGap="10px">
+    <div fxLayoutAlign="center center">
+        <mat-form-field>
+            <mat-label>SelectForm</mat-label>
+            <mat-select (selectionChange)="onChange($event)">
+                <mat-option *ngFor="let s of selectForm" [value]="s.viewValue">
+                    {{s.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div fxLayoutAlign="center center">
+        <mat-card *ngIf="bool" class="mat">
+            <!-- <div *ngFor="let f of selectForm"> -->
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <div *ngFor="let p of farr">
+                        <mat-form-field >
+                            <!-- <input [type]="p.type" matInput [placeholder]="p" [formControlName]="p.co"> -->
+                            <input matInput [placeholder] ="p" [formControlName] ="p">
+                        </mat-form-field>
+                    </div>
+                   <button type="submit">button</button> 
+         </form>
+
+            <!-- </div> -->
+        </mat-card>
+    </div>
+
+</div>
